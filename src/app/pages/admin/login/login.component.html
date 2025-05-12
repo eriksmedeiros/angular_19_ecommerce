@@ -1,77 +1,42 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login/Signup Form</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
 </head>
 <body>
-    <div class="container">
-        <div class="form-box login">
-            <form action="#">
-                <h1>Login</h1>
-                <div class="input-box">
-                    <input type="text" placeholder="Username" required>
-                    <i class='bx bxs-user'></i>
-                </div>
-                <div class="input-box">
-                    <input type="password" placeholder="Password" required>
-                    <i class='bx bxs-lock-alt' ></i>
-                </div>
-                <div class="forgot-link">
-                    <a href="#">Forgot Password?</a>
-                </div>
-                <button type="submit" class="btn">Login</button>
-                <p>or login with social platforms</p>
-                <div class="social-icons">
-                    <a href="#"><i class='bx bxl-google' ></i></a>
-                    <a href="#"><i class='bx bxl-facebook' ></i></a>
-                    <a href="#"><i class='bx bxl-github' ></i></a>
-                    <a href="#"><i class='bx bxl-linkedin' ></i></a>
-                </div>
-            </form>
+
+  <div class="container">
+    <div class="login-box">
+      <h2>Login</h2>
+      <form id="login-form">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <!-- ngModel indica caminho bidirecional de dados do html para o TS e vice versa -->
+          <!-- faz referência a propriedade userName do objeto loginObj -->
+          <input type="text" id="email" name="userName" [(ngModel)]="loginObj.userName" placeholder="Enter your email" required>
+          <small id="email-error" class="error-message"></small>
         </div>
 
-        <div class="form-box register">
-            <form action="#">
-                <h1>Registration</h1>
-                <div class="input-box">
-                    <input type="text" placeholder="Username" required>
-                    <i class='bx bxs-user'></i>
-                </div>
-                <div class="input-box">
-                    <input type="email" placeholder="Email" required>
-                    <i class='bx bxs-envelope' ></i>
-                </div>
-                <div class="input-box">
-                    <input type="password" placeholder="Password" required>
-                    <i class='bx bxs-lock-alt' ></i>
-                </div>
-                <button type="submit" class="btn">Register</button>
-                <p>or register with social platforms</p>
-                <div class="social-icons">
-                    <a href="#"><i class='bx bxl-google' ></i></a>
-                    <a href="#"><i class='bx bxl-facebook' ></i></a>
-                    <a href="#"><i class='bx bxl-github' ></i></a>
-                    <a href="#"><i class='bx bxl-linkedin' ></i></a>
-                </div>
-            </form>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <!-- ngModel indica caminho bidirecional de dados do html para o TS e vice versa -->
+          <!-- faz referência a propriedade password do objeto loginObj -->
+          <input type="password" id="password" name="password" [(ngModel)]="loginObj.password" placeholder="Enter your password" required>
+          <small id="password-error" class="error-message"></small>
         </div>
 
-        <div class="toggle-box">
-            <div class="toggle-panel toggle-left">
-                <h1>Hello, Welcome!</h1>
-                <p>Don't have an account?</p>
-                <button class="btn register-btn">Register</button>
-            </div>
+        <!-- (click) é um event que chama a função onLogin() para validar o login -->
+        <button type="button" (click)="onLogin()" class="submit-btn">Login</button>
 
-            <div class="toggle-panel toggle-right">
-                <h1>Welcome Back!</h1>
-                <p>Already have an account?</p>
-                <button class="btn login-btn">Login</button>
-            </div>
+        <div class="forgot-password">
+          <a href="#">Forgot Password?</a>
         </div>
+      </form>
+
+      <p class="signup-link">Don't have an account? <a href="#">Sign up here</a></p>
     </div>
+  </div>
+
 </body>
 </html>
