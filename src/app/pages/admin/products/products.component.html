@@ -38,7 +38,57 @@
       </div>
 
       <div class="card-body">
+        <div class="row">
+          <div class="col-6">
+            <label for="SKU">SKU</label>
+            <input type="text" class="form-control" id="SKU" placeholder="SKU" [(ngModel)]="productObj.ProductSku">
+          </div>
 
+          <div class="col-6">
+            <label for="Name">Name</label>
+            <input type="text" class="form-control" id="Name" placeholder="Name" [(ngModel)]="productObj.ProductName">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+            <label for="Short Name">Short Name</label>
+            <input type="text" class="form-control" id="ShortName" placeholder="Short Name" [(ngModel)]="productObj.ProductShortName">
+          </div>
+
+          <div class="col-6">
+            <label for="Price">Price</label>
+            <input type="text" class="form-control" id="Price" placeholder="Price" [(ngModel)]="productObj.ProductPrice">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+            <label for="Category">Category</label>
+            <input type="text" class="form-control" id="Category" placeholder="Category" [(ngModel)]="productObj.CategoryId">
+          </div>
+
+          <div class="col-6">
+            <label for="">Delivery Time</label>
+            <input type="text" class="form-control" id="DeliveryTime" placeholder="Delivery Time" [(ngModel)]="productObj.DeliveryTime">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <label for="Image">Image</label>
+            <input type="text" class="form-control" id="Image" placeholder="Image" [(ngModel)]="productObj.ProductImage">
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <label for="Description">Product Description</label>
+            <textarea class="form-control" rows="4" id="Description" placeholder="Description" [(ngModel)]="productObj.ProductDescription">
+            </textarea>
+          </div>
+        </div>
       </div>
 
     </div>
